@@ -36,5 +36,21 @@ return [
     'company'                       => 'Company',
     'vendor'                        => 'Vendor',
     'level'                         => 'Level',
+    'settings'                      => 'Settings',
+    'save'                          => 'Save',
+    'sitename_ar'                   => 'Sitename in arabic',
+    'sitename_en'                   => 'Sitename in english',
+    'icon'                          => 'Icon',
+    'logo'                          => 'Logo',
+    'description'                   => 'Description',
+    'main_lang'                     => 'Main Language',
+    'status'                        => 'Status',
+    'message_maintenance'           => 'Message Maintenance',
+    'keywords'                      => 'Keywords',
+    'ar'                            => 'Arabic',
+    'en'                            => 'English',
+    'open'                          => 'Open',
+    'close'                         => 'Close',
+
 
  ];

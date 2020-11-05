@@ -159,7 +159,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
-            <a href="{{aurl()}}" class="nav-link @php if(active_menu('admin')['0'] == '' && active_menu('users')['0'] == '') echo 'active' @endphp">
+            <a href="{{aurl()}}" class="nav-link <?php if(active_menu('admin')['0'] == '' && active_menu('users')['0'] == '') echo 'active' ?>">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 {{trans('admin.dashboard')}}
@@ -219,7 +219,23 @@
               </li>
             </ul>
           </li>
-
+          <li class="nav-item has-treeview {{active_menu('settings')['0']}}">
+            <a href="#" class="nav-link {{active_menu('settings')['1']}}">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                {{trans('admin.settings')}}
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{aurl('settings')}}" class="nav-link {{active_menu('settings')['1']}}">
+                  <i class="far fa-user nav-icon"></i>
+                  <p>{{trans('admin.settings')}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
