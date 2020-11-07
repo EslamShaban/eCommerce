@@ -152,6 +152,8 @@ return [
         'email'     => 'Email',
         'password'  => 'Password',
         'level'     => 'Level',
+        'logo'      => 'Logo',
+        'icon'      => 'Icon'
     ],
 
 ];

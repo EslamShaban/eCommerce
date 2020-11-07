@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Setting;
+use Storage;
+use Up;
 
 class SettingsController extends Controller
 {
@@ -17,9 +19,35 @@ class SettingsController extends Controller
 
     public function setting_save()
     {
-        $data = request()->except('_token', '_method');
-        
-        Setting::where('id', 'desc')->update($data);
+
+        $data =request()->validate([
+            'logo'      => 'image|mimes:jpg,png,jpeg,gif',
+            'icon'      => 'image|mimes:jpg,png,jpeg,gif'
+        ]);
+
+        if(request()->hasFile('logo')){
+
+            $data['logo'] = Up::uploadFile([
+                'new_name'      => '',
+                'file'          => 'logo',
+                'path'          => 'settings',
+                'upload_type'   => 'single',
+                'delete_file'   => setting()->logo
+            ]);
+        }
+
+        if(request()->hasFile('icon')){
+
+            $data['icon'] = Up::uploadFile([
+                'new_name'      => '',
+                'file'          => 'icon',
+                'path'          => 'settings',
+                'upload_type'   => 'single',
+                'delete_file'   => setting()->icon
+            ]);
+        }
+
+        Setting::orderBy('id', 'desc')->update($data);
 
         session()->flash('success', trans('admin.edit_successfuly'));
 
