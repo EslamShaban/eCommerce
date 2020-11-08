@@ -57,6 +57,10 @@ return [
     'create_new_country'            => 'إضافة دولة',
     'mob'                           => 'كود الدولة',
     'code'                          => 'إختصار / رمز الدولة' ,
-    'country_logo'                  => 'علم الدولة'  
-
+    'country_logo'                  => 'علم الدولة',
+    'cities'                        => 'المدن / المحافظات',
+    'cityname_ar'                   => 'اسم المدينة عربى',
+    'cityname_en'                   => 'اسم المدينة انجليزى',
+    'create_new_city'               => 'إضافة مدينة',
+    'country_id'                    => 'الدولة'
 ];

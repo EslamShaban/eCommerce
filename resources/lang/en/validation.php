@@ -148,12 +148,13 @@ return [
 
     'attributes' => [
 
-        'name'      =>'Name',
-        'email'     => 'Email',
-        'password'  => 'Password',
-        'level'     => 'Level',
-        'logo'      => 'Logo',
-        'icon'      => 'Icon'
+        'name'          =>'Name',
+        'email'         => 'Email',
+        'password'      => 'Password',
+        'level'         => 'Level',
+        'logo'          => 'Logo',
+        'icon'          => 'Icon',
+        'country_id'    => 'Country'
     ],
 
 ];

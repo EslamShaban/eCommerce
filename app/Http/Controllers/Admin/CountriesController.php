@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Countries;
+use App\Country;
 use Storage;
 use Up;
 
@@ -13,7 +13,7 @@ class CountriesController extends Controller
 
     public function index()
     {
-        $countries = Countries::all();
+        $countries = Country::all();
         $title = trans('admin.countries');
         return view('admin.countries.index', compact('countries', 'title'));
     }
@@ -48,7 +48,7 @@ class CountriesController extends Controller
         }
 
 
-        Countries::create($data);
+        Country::create($data);
 
         session()->flash('success', trans('admin.added_successfuly'));
 
@@ -58,7 +58,7 @@ class CountriesController extends Controller
   
     public function edit($id)
     {
-        $country = Countries::where('id', $id)->first();
+        $country = Country::where('id', $id)->first();
         $title = trans('admin.edit_admin');
         return view('admin.countries.edit', compact('country', 'title'));
     }
@@ -80,12 +80,12 @@ class CountriesController extends Controller
                 'file'          => 'logo',
                 'path'          => 'countries',
                 'upload_type'   => 'single',
-                'delete_file'   => Countries::find($id)->logo
+                'delete_file'   => Country::find($id)->logo
             ]);
         }
 
 
-        Countries::where('id', $id)->update($data);
+        Country::where('id', $id)->update($data);
 
         session()->flash('success', trans('admin.edit_successfuly'));
 
@@ -95,7 +95,7 @@ class CountriesController extends Controller
  
     public function destroy($id)
     {
-        $Country = Countries::find($id);
+        $Country = Country::find($id);
         Storage::delete($Country->logo);
 
         $Country->delete();
@@ -112,7 +112,7 @@ class CountriesController extends Controller
 
             foreach(request('item') as $id){
 
-                $Country = Countries::find($id);
+                $Country = Country::find($id);
                 Storage::delete($Country->logo);
         
                 $Country->delete();
@@ -120,7 +120,7 @@ class CountriesController extends Controller
 
         }else{
 
-            $Country = Countries::find(request('item'));
+            $Country = Country::find(request('item'));
             Storage::delete($Country->logo);
     
             $Country->delete();

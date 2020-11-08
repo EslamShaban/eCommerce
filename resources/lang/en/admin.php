@@ -57,6 +57,11 @@ return [
     'create_new_country'            => 'Create New Country',
     'mob'                           => 'Country Code',
     'code'                          => 'Abbrevation/Sign Country' ,
-    'country_logo'                  => 'Country Flag'     
+    'country_logo'                  => 'Country Flag',
+    'cities'                        => ' Cities',
+    'cityname_ar'                   => 'Arabic City Name',
+    'cityname_en'                   => 'English City Name',
+    'create_new_city'               => 'Create New Country',
+    'country_id'                    => 'Country'   
 
  ];

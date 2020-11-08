@@ -253,6 +253,23 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item has-treeview {{active_menu('cities')['0']}}">
+            <a href="#" class="nav-link {{active_menu('cities')['1']}}">
+              <i class="nav-icon fas fa-flag"></i>
+              <p>
+                {{trans('admin.cities')}}
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{aurl('cities')}}" class="nav-link {{active_menu('cities')['1']}}">
+                  <i class="far fa-flag nav-icon"></i>
+                  <p>{{trans('admin.cities')}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
