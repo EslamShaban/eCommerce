@@ -19,10 +19,32 @@ class SettingsController extends Controller
 
     public function setting_save()
     {
+        /*
+
+                'sitename_ar',
+        'sitename_en',
+        'logo',
+        'icon',
+        'email',
+        'main_lang',
+        'description',
+        'keywords',
+        'status',
+        'message_maintenance'
+
+        */
 
         $data =request()->validate([
-            'logo'      => 'image|mimes:jpg,png,jpeg,gif',
-            'icon'      => 'image|mimes:jpg,png,jpeg,gif'
+            'sitename_ar'                   => '',
+            'sitename_en'                   => '',
+            'logo'                          => 'image|mimes:jpg,png,jpeg,gif',
+            'icon'                          => 'image|mimes:jpg,png,jpeg,gif',
+            'email'                         => '',
+            'main_lang'                     => '',
+            'description'                   => '',
+            'keywords'                      => '',
+            'status'                        => '',
+            'message_maintenance'           => ''
         ]);
 
         if(request()->hasFile('logo')){

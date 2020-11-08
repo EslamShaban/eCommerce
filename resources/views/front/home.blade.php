@@ -1,4 +1,4 @@
-@extends('front.index');
+@extends('front.index')
 @section('content')
 
 <div class="slider-area">

@@ -51,6 +51,12 @@ return [
     'en'                            => 'English',
     'open'                          => 'Open',
     'close'                         => 'Close',
-
+    'countries'                     => 'Countries',
+    'countryname_ar'                => 'Arabic Country Name',
+    'countryname_en'                => 'English Country Name',
+    'create_new_country'            => 'Create New Country',
+    'mob'                           => 'Country Code',
+    'code'                          => 'Abbrevation/Sign Country' ,
+    'country_logo'                  => 'Country Flag'     
 
  ];

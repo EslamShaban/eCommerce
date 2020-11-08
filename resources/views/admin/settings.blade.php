@@ -66,7 +66,7 @@
             </div>
             <div class="form-group mb-3">
               <label for="message_maintenance" >{{trans('admin.message_maintenance')}}</label>
-              <textarea rows='5' name="message_maintenance" id="message_maintenance" class="form-control" value="{{setting()->message_maintenance}}" placeholder="{{trans('admin.message_maintenance')}}"></textarea>
+              <textarea rows='5' name="message_maintenance" id="message_maintenance" class="form-control" value="{{setting()->message_maintenance}}" placeholder="{{trans('admin.message_maintenance')}}">{{setting()->message_maintenance}}</textarea>
             </div>
             <div class="col-3">
                 <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-edit"></i> {{trans('admin.save')}}</button>
