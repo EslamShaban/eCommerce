@@ -62,5 +62,10 @@ return [
     'cityname_ar'                   => 'اسم المدينة عربى',
     'cityname_en'                   => 'اسم المدينة انجليزى',
     'create_new_city'               => 'إضافة مدينة',
-    'country_id'                    => 'الدولة'
+    'country_id'                    => 'الدولة',
+    'city_id'                       => 'المدينة',
+    'states'                        => 'المناطق / الاحياء',
+    'statename_ar'                  => 'اسم المنطقة عربى',
+    'statename_en'                  => 'اسم المنطقة انجليزى',
+    'create_new_state'              => 'إضافة منطقة',
 ];

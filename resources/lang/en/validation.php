@@ -154,7 +154,10 @@ return [
         'level'         => 'Level',
         'logo'          => 'Logo',
         'icon'          => 'Icon',
-        'country_id'    => 'Country'
+        'country_id'    => 'Country',
+        'city_id'       => 'City',
+        'statename_ar'  => 'Arabic State Name',
+        'statename_en'  => 'English State Name',
     ],
 
 ];

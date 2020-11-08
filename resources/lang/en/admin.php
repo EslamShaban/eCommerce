@@ -61,7 +61,12 @@ return [
     'cities'                        => ' Cities',
     'cityname_ar'                   => 'Arabic City Name',
     'cityname_en'                   => 'English City Name',
-    'create_new_city'               => 'Create New Country',
-    'country_id'                    => 'Country'   
+    'create_new_city'               => 'Create New City',
+    'country_id'                    => 'Country',
+    'city_id'                       => 'City',
+    'states'                        => 'States',
+    'statename_ar'                  => 'Arabic State Name',
+    'statename_en'                  => 'English State Name',
+    'create_new_state'              => 'Create New State', 
 
  ];

@@ -135,6 +135,8 @@ function delete_this_item(item_id){
   
 }
 
+
 </script>
+@stack('script')
 </body>
 </html>
