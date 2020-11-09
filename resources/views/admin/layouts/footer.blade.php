@@ -56,6 +56,10 @@
 <!-- DataTables -->
 <script src="{{url('/')}}/design/adminlte/plugins/datatables/jquery.dataTables.js"></script>
 <script src="{{url('/')}}/design/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<script src="{{url('/')}}/design/adminlte/jstree/jstree.js"></script>
+<script src="{{url('/')}}/design/adminlte/jstree/jstree.checkbox.js"></script>
+<script src="{{url('/')}}/design/adminlte/jstree/jstree.wholerow.js"></script>
+
 
 
 <!-- page script -->

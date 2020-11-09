@@ -6,6 +6,53 @@ if(! function_exists('setting')){
     }
 }
 
+if(! function_exists('load_dep')){
+    function load_dep($select = null, $dep_hide = null){
+        $departements =  \App\Departement::selectRaw('depname_'.session('lang').' as text' )
+        ->selectRaw('id as id' )
+        ->selectRaw('parent as parent' )
+        ->get('text', 'id', 'parent');
+
+        $dep_arr = [];
+
+        foreach($departements as $departement){
+            $list_arr = [];
+            $list_arr['icon'] = '';
+            $list_arr['li_attr'] = '';
+            $list_arr['a_attr'] = '';
+            $list_arr['children'] = [];
+
+            if($select !== null && $select == $departement->id ){
+
+                $list_arr['state'] = [
+                    'opened'    => true,
+                    'selected'  =>true,
+                    'disabled' =>false
+                ];
+            }
+
+            if($dep_hide == $departement->id ){
+
+                $list_arr['state'] = [
+                    'opened'    => false,
+                    'selected'  =>false,
+                    'disabled' =>true,
+                    'hidden' =>true
+
+                ];
+            }
+
+            $list_arr['id']     = $departement->id;
+            $list_arr['parent'] = $departement->parent !== null ? $departement->parent : '#';
+            $list_arr['text']   = $departement->text;
+
+            array_push($dep_arr, $list_arr);
+        }
+
+        return json_encode($dep_arr, JSON_UNESCAPED_UNICODE);
+    }
+}
+
 if(! function_exists('aurl')){
     function aurl($url = null){
         return url('admin/' . $url);
@@ -35,6 +82,7 @@ if(! function_exists('lang')){
         if(session()->has('lang')){
             return session('lang');
         }else{
+            session()->put('lang', setting()->main_lang);
             return setting()->main_lang;
         }    
     }

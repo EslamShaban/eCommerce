@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="{{url('design/front')}}/style.css">
     <link rel="stylesheet" href="{{url('design/front')}}/css/responsive.css">
 
-
     @if(lang() == 'ar')
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.css" >
     @endif

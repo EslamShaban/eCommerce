@@ -158,6 +158,9 @@ return [
         'city_id'       => 'City',
         'statename_ar'  => 'Arabic State Name',
         'statename_en'  => 'English State Name',
+        'depname_ar'    => 'Arabic Departement Name',
+        'depname_en'    => 'Arabic Departement Name',
+        'parent'        => 'parent',
     ],
 
 ];

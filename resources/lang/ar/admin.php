@@ -40,7 +40,7 @@ return [
     'save'                          => 'حفظ',
     'sitename_ar'                   => 'الاسم باللغة العربية',
     'sitename_en'                   => 'الاسم باللغةالانجليزية',
-    'icon'                          => 'رمز الموقع',
+    'icon'                          => 'الرمز',
     'logo'                          => 'شعار الموقع',
     'description'                   => 'الوصف',
     'main_lang'                     => 'اللغة الافتراضية',
@@ -68,4 +68,10 @@ return [
     'statename_ar'                  => 'اسم المنطقة عربى',
     'statename_en'                  => 'اسم المنطقة انجليزى',
     'create_new_state'              => 'إضافة منطقة',
+    'depname_ar'                    => 'اسم القسم عربى',
+    'depname_en'                    => 'اسم القسم انجليزى',
+    'parent'                        => 'قسم فرعى من',
+    'create_new_dep'                => 'إضافة قسم', 
+    'departements'                  => 'الاقسام',
+    'add'                           => 'إضافة'
 ];

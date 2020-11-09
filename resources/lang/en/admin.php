@@ -68,5 +68,11 @@ return [
     'statename_ar'                  => 'Arabic State Name',
     'statename_en'                  => 'English State Name',
     'create_new_state'              => 'Create New State', 
+    'create_new_dep'                => 'Create New Departement', 
+    'departements'                  => 'Departements',
+    'depname_ar'                    => 'Arabic Departement Name',
+    'depname_en'                    => 'Arabic Departement Name',
+    'parent'                        => 'parent',
+    'add'                           => 'Add'
 
  ];
