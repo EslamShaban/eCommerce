@@ -73,5 +73,11 @@ return [
     'parent'                        => 'قسم فرعى من',
     'create_new_dep'                => 'إضافة قسم', 
     'departements'                  => 'الاقسام',
-    'add'                           => 'إضافة'
+    'add'                           => 'إضافة',
+    'trademarks'                    => 'العلامات التجارية',
+    'create_new_trademark'          => 'أضف علامة تجارية',
+    'tradmarkname_ar'               => 'اسم العلامات التجارية عربى',
+    'tradmarkname_en'               => 'اسم العلامات التجارية انجليزى',
+    'trademark_logo'                => 'شعار العلامة التجارية'
+
 ];

@@ -69,7 +69,10 @@
             <div class="form-group mb-3">
                 <label for="icon" >{{trans('admin.icon')}}</label>
                 <input type="file"  name="icon" id="icon" class="form-control image" value="" placeholder="{{trans('admin.icon')}}">
-            </div>
+                @if(! empty($departement->icon) && Storage::has($departement->icon))
+                  <img src="{{Storage::url($departement->icon)}}" class="imgPreview img-thumbnail" style="width:50px; height:50px">
+                @endif
+              </div>
 
             <div class="col-3">
                 <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-edit"></i> {{trans('admin.edit_admin')}}</button>

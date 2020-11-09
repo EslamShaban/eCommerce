@@ -73,6 +73,10 @@ return [
     'depname_ar'                    => 'Arabic Departement Name',
     'depname_en'                    => 'Arabic Departement Name',
     'parent'                        => 'parent',
-    'add'                           => 'Add'
-
+    'add'                           => 'Add',
+    'trademarks'                    => 'Trademarks',
+    'create_new_trademark'          => 'Create New Trademark',
+    'tradmarkname_ar'               => 'Arabic Trademarks Name',
+    'tradmarkname_en'               => 'English Trademarks Name',
+    'trademark_logo'                => 'Trademark Logo'
  ];

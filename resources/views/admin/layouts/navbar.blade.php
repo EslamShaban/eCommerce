@@ -289,7 +289,7 @@
           </li>
           <li class="nav-item has-treeview {{active_menu('departements')['0']}}">
             <a href="#" class="nav-link {{active_menu('departements')['1']}}">
-              <i class="nav-icon fas fa-flag"></i>
+              <i class="nav-icon fas fa-list"></i>
               <p>
                 {{trans('admin.departements')}}
                 <i class="right fas fa-angle-left"></i>
@@ -298,7 +298,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{aurl('departements')}}" class="nav-link {{active_menu('departements')['1']}}">
-                  <i class="far fa-flag nav-icon"></i>
+                  <i class="fas fa-list nav-icon"></i>
                   <p>{{trans('admin.departements')}}</p>
                 </a>
               </li>
@@ -306,6 +306,23 @@
                 <a href="{{aurl('departements/create')}}" class="nav-link {{active_menu('departements')['1']}}">
                   <i class="fa fa-plus nav-icon"></i>
                   <p>{{trans('admin.add')}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview {{active_menu('trademarks')['0']}}">
+            <a href="#" class="nav-link {{active_menu('trademarks')['1']}}">
+              <i class="nav-icon fas fa-cube"></i>
+              <p>
+                {{trans('admin.trademarks')}}
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{aurl('trademarks')}}" class="nav-link {{active_menu('trademarks')['1']}}">
+                  <i class="fas fa-cube nav-icon"></i>
+                  <p>{{trans('admin.trademarks')}}</p>
                 </a>
               </li>
             </ul>

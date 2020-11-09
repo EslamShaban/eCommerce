@@ -64,8 +64,8 @@
               <textarea rows='5' name="keywords" id="keywords" class="form-control" value="{old('keywords')}}" placeholder="{{trans('admin.keywords')}}"></textarea>
             </div>
             <div class="form-group mb-3">
-                <label for="icon" >{{trans('admin.icon')}}</label>
-                <input type="file"  name="icon" id="icon" class="form-control image" value="" placeholder="{{trans('admin.dep_icon')}}">
+              <label for="icon" >{{trans('admin.icon')}}</label>
+              <input type="file"  name="icon" id="icon" class="form-control image" value="" placeholder="{{trans('admin.dep_icon')}}">
             </div>
             <div class="col-3">
                 <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-plus"></i> {{trans('admin.create_new_dep')}}</button>

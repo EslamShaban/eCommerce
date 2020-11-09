@@ -161,6 +161,8 @@ return [
         'depname_ar'    => 'Arabic Departement Name',
         'depname_en'    => 'Arabic Departement Name',
         'parent'        => 'parent',
+        'tradmarkname_ar'   => 'Arabic Trademarks Name',
+        'tradmarkname_en'   => 'English Trademarks Name',
     ],
 
 ];
