@@ -78,5 +78,15 @@ return [
     'create_new_trademark'          => 'Create New Trademark',
     'tradmarkname_ar'               => 'Arabic Trademarks Name',
     'tradmarkname_en'               => 'English Trademarks Name',
-    'trademark_logo'                => 'Trademark Logo'
+    'trademark_logo'                => 'Trademark Logo',
+    'manufactories'                 => 'Manufactories',
+    'manufactoryname_ar'            => 'Arabic Manufactory Name',
+    'manufactoryname_en'            => 'English Manufactory Name',
+    'facebook'                      => 'Facebook',
+    'twitter'                       => 'Twitter',
+    'website'                       => 'Website',
+    'contact_name'                  => 'Contact Name',
+    'mobile'                        => 'Mobile',
+    'address'                       => 'Address',
+    'create_new_manufactory'        => 'Create New Manufactory',
  ];

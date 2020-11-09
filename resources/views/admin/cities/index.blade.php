@@ -24,7 +24,7 @@
 
         <input type="hidden" name="_method" value="DELETE"/>
 
-        <table id="example1" class="table table-bordered table-striped">
+        <table id="example1" class="table table-bordered table-striped ">
           <thead>
           <tr>
             <th><input type="checkbox"  class="checkall" onclick="check_all()" /></th>

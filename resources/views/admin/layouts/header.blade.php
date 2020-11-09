@@ -38,6 +38,7 @@
     <!-- DataTables -->
     <link rel="stylesheet" href="{{url('/')}}/design/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
     
+
   </head>
   <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">

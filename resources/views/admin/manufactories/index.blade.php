@@ -7,30 +7,34 @@
     
 <div class="card">
     <div class="card-header">
-      <h3 class="card-title">{{trans('admin.trademarks')}}</h3>
+      <h3 class="card-title">{{trans('admin.manufactories')}}</h3>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-      <a href="{{route('trademarks.create')}}" class="btn btn-info"><i class="fa fa-plus"></i> <span>{{trans('admin.create_new_trademark')}}</span></a>
+      <a href="{{route('manufactories.create')}}" class="btn btn-info"><i class="fa fa-plus"></i> <span>{{trans('admin.create_new_manufactory')}}</span></a>
       <a href="#" class="btn btn-primary"><i class="fa fa-print"></i> <span>{{trans('admin.print')}}</span></a>
       <a href="#" class="btn btn-success"><i class="fa fa-file"></i> <span>{{trans('admin.export_excel')}}</span></a>
       <a href="#" class="btn btn-danger delete_btn disabled" onclick="del_all()"><i class="fa fa-trash"></i> <span>{{trans('admin.delete_all')}}</span></a>
 
       <br><br>
       
-      <form action="{{aurl('trademarks/destroy/all')}}" id="form_data" >
+      <form action="{{aurl('manufactories/destroy/all')}}" id="form_data" >
 
         @csrf
 
         <input type="hidden" name="_method" value="DELETE"/>
 
-        <table id="example1" class="table table-bordered table-striped ">
+        <table id="example1" class="table table-bordered table-striped table-responsive">
           <thead>
           <tr>
             <th><input type="checkbox"  class="checkall" onclick="check_all()" /></th>
             <th>#</th>
-            <th>{{trans('admin.tradmarkname_ar')}}</th>
-            <th>{{trans('admin.tradmarkname_en')}}</th>
+            <th>{{trans('admin.manufactoryname_ar')}}</th>
+            <th>{{trans('admin.manufactoryname_en')}}</th>
+            <th>{{trans('admin.contact_name')}}</th>
+            <th>{{trans('admin.email')}}</th>
+            <th>{{trans('admin.mobil')}}</th>
+
             <th>{{trans('admin.created_at')}}</th>
             <th>{{trans('admin.updated_at')}}</th>
             <th>{{trans('admin.action')}}</th>
@@ -40,20 +44,23 @@
               @php
                   $i=0; 
               @endphp
-              @foreach($trademarks as $Trademark)
+              @foreach($manufactories as $manufactory)
                   @php
                     $i++;
                   @endphp
                   <tr style="height:10px">
-                    <td><input type="checkbox" class="item_checkbox" name="item[]" onclick="item_check('{{$trademarks->count()}}')" value="{{$Trademark->id}}" /></td>
+                    <td><input type="checkbox" class="item_checkbox" name="item[]" onclick="item_check('{{$manufactories->count()}}')" value="{{$manufactory->id}}" /></td>
                     <td>{{$i}}</td>
-                    <td>{{$Trademark->tradmarkname_ar}}</td>
-                    <td>{{$Trademark->tradmarkname_en}}</td>
-                    <td>{{$Trademark->created_at}}</td>
-                    <td>{{$Trademark->updated_at}}</td>
+                    <td>{{$manufactory->manufactoryname_ar}}</td>
+                    <td>{{$manufactory->manufactoryname_en}}</td>
+                    <td>{{$manufactory->contact_name}}</td>
+                    <td>{{$manufactory->email}}</td>
+                    <td>{{$manufactory->mobile}}</td>
+                    <td>{{$manufactory->created_at}}</td>
+                    <td>{{$manufactory->updated_at}}</td>
                     <td>
-                      <a href="{{route('trademarks.edit', $Trademark->id)}}" class="btn btn-info"><i class="fa fa-edit"></i> </a>
-                      <a href="#" class="btn btn-danger" onclick="delete_this_item('{{$Trademark->id}}')"><i class="fa fa-trash"></i> </a>
+                      <a href="{{route('manufactories.edit', $manufactory->id)}}" class="btn btn-info"><i class="fa fa-edit"></i> </a>
+                      <a href="#" class="btn btn-danger" onclick="delete_this_item('{{$manufactory->id}}')"><i class="fa fa-trash"></i> </a>
                     </td>
                   </tr>
               @endforeach

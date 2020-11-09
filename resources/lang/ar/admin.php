@@ -78,6 +78,16 @@ return [
     'create_new_trademark'          => 'أضف علامة تجارية',
     'tradmarkname_ar'               => 'اسم العلامات التجارية عربى',
     'tradmarkname_en'               => 'اسم العلامات التجارية انجليزى',
-    'trademark_logo'                => 'شعار العلامة التجارية'
+    'trademark_logo'                => 'شعار العلامة التجارية',
+    'manufactories'                 => 'المصًنعين',
+    'manufactoryname_ar'            => 'اسم المصًنع عربى',
+    'manufactoryname_en'            => 'اسم المصًنع انجليزى',
+    'facebook'                      => 'فيسبوك',
+    'twitter'                       => 'تويتر',
+    'website'                       => 'الموقع الرئيسى',
+    'contact_name'                  => 'مسؤل المصنع',
+    'mobile'                        => 'الجوال',
+    'address'                       => 'العنوان',
+    'create_new_manufactory'        => 'أضف مصًنع ',
 
 ];

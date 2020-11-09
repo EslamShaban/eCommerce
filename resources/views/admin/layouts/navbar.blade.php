@@ -327,6 +327,23 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item has-treeview {{active_menu('manufactories')['0']}}">
+            <a href="#" class="nav-link {{active_menu('manufactories')['1']}}">
+              <i class="nav-icon fas fa-cube"></i>
+              <p>
+                {{trans('admin.manufactories')}}
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{aurl('manufactories')}}" class="nav-link {{active_menu('manufactories')['1']}}">
+                  <i class="fas fa-cube nav-icon"></i>
+                  <p>{{trans('admin.manufactories')}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

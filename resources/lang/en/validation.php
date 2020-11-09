@@ -163,6 +163,14 @@ return [
         'parent'        => 'parent',
         'tradmarkname_ar'   => 'Arabic Trademarks Name',
         'tradmarkname_en'   => 'English Trademarks Name',
+        'manufactoryname_ar'            => 'Arabic Manufactory Name',
+        'manufactoryname_en'            => 'English Manufactory Name',
+        'facebook'                      => 'Facebook',
+        'twitter'                       => 'Twitter',
+        'website'                       => 'Website',
+        'contact_name'                  => 'Contact Name',
+        'mobile'                        => 'Mobile',
+        'address'                       => 'Address',
     ],
 
 ];
