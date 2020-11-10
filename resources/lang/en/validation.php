@@ -171,6 +171,10 @@ return [
         'contact_name'                  => 'Contact Name',
         'mobile'                        => 'Mobile',
         'address'                       => 'Address',
+        'shippingname_ar'               => 'Arabic Shipping Name',
+        'shippingname_en'               => 'English Shipping Name',
+        'user_id'                       => 'Owner',
+        'shipping_logo'                 => 'Shipping Logo'
     ],
 
 ];

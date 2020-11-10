@@ -167,10 +167,14 @@ return [
         'manufactoryname_en'            => 'اسم المصنع انجليزى',
         'facebook'                      => 'فيسبوك',
         'twitter'                       => 'تويتر',
-        'website'                       => 'الموقع الرئيسى',
+        'website'                       => 'الموقع الرسمى',
         'contact_name'                  => 'مسؤل المصنع',
         'mobile'                        => 'الجوال',
         'address'                       => 'العنوان',
+        'shippingname_ar'               => 'اسم شركة الشحن عربى',
+        'shippingname_en'               => 'اسم شركة الشحن انجليزى',
+        'user_id'                       => 'المالك',
+        'shipping_logo'                 => 'شعار الشركة'
     ],
 
 ];

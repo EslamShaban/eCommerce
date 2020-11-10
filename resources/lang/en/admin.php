@@ -89,4 +89,11 @@ return [
     'mobile'                        => 'Mobile',
     'address'                       => 'Address',
     'create_new_manufactory'        => 'Create New Manufactory',
+    'create_new_shipping'           => 'Create New Shipping',
+    'shippingname_ar'               => 'Arabic Shipping Name',
+    'shippingname_en'               => 'English Shipping Name',
+    'user_id'                       => 'Owner',
+    'shipping_logo'                 => 'Shipping Logo',
+    'shippings'                     => 'Shippings'
+
  ];

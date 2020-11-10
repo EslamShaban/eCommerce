@@ -84,10 +84,15 @@ return [
     'manufactoryname_en'            => 'اسم المصًنع انجليزى',
     'facebook'                      => 'فيسبوك',
     'twitter'                       => 'تويتر',
-    'website'                       => 'الموقع الرئيسى',
+    'website'                       => 'الموقع الرسمى',
     'contact_name'                  => 'مسؤل المصنع',
     'mobile'                        => 'الجوال',
     'address'                       => 'العنوان',
     'create_new_manufactory'        => 'أضف مصًنع ',
-
+    'create_new_shipping'           => 'أضف شركة شحن',
+    'shippingname_ar'               => 'اسم شركة الشحن عربى',
+    'shippingname_en'               => 'اسم شركة الشحن انجليزى',
+    'user_id'                       => 'المالك',
+    'shipping_logo'                 => 'شعار الشركة',
+    'shippings'                     => 'شركات الشحن'
 ];
