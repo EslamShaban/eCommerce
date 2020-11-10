@@ -182,6 +182,10 @@ return [
         'color'                         => 'اللون',
         'colorname_ar'                  => 'اسم اللون عربى',
         'colorname_en'                  => 'إسم اللون انجليزى',
+        'sizename_ar'                   => 'إسم المقاس عربى',
+        'sizename_en'                   => 'إسم المقاس انجليزى',
+        'department_id'                 => 'القسم',
+        'is_public'                     => 'مقاس عام'
     ],
 
 ];

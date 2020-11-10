@@ -148,21 +148,21 @@ return [
 
     'attributes' => [
 
-        'name'          =>'Name',
-        'email'         => 'Email',
-        'password'      => 'Password',
-        'level'         => 'Level',
-        'logo'          => 'Logo',
-        'icon'          => 'Icon',
-        'country_id'    => 'Country',
-        'city_id'       => 'City',
-        'statename_ar'  => 'Arabic State Name',
-        'statename_en'  => 'English State Name',
-        'depname_ar'    => 'Arabic Departement Name',
-        'depname_en'    => 'Arabic Departement Name',
-        'parent'        => 'parent',
-        'tradmarkname_ar'   => 'Arabic Trademarks Name',
-        'tradmarkname_en'   => 'English Trademarks Name',
+        'name'                          =>'Name',
+        'email'                         => 'Email',
+        'password'                      => 'Password',
+        'level'                         => 'Level',
+        'logo'                          => 'Logo',
+        'icon'                          => 'Icon',
+        'country_id'                    => 'Country',
+        'city_id'                       => 'City',
+        'statename_ar'                  => 'Arabic State Name',
+        'statename_en'                  => 'English State Name',
+        'depname_ar'                    => 'Arabic Departement Name',
+        'depname_en'                    => 'Arabic Departement Name',
+        'parent'                        => 'parent',
+        'tradmarkname_ar'               => 'Arabic Trademarks Name',
+        'tradmarkname_en'               => 'English Trademarks Name',
         'manufactoryname_ar'            => 'Arabic Manufactory Name',
         'manufactoryname_en'            => 'English Manufactory Name',
         'facebook'                      => 'Facebook',
@@ -184,7 +184,10 @@ return [
         'color'                         => 'Color',
         'colorname_ar'                  => 'Arabic Color Name',
         'colorname_en'                  => 'English Color Name',
-        
+        'sizename_ar'                   => 'Arabic Size Name',
+        'sizename_en'                   => 'English Size Name',
+        'department_id'                 => 'Department',
+        'is_public'                     => 'Public Size'
     ],
 
 ];

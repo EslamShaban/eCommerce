@@ -396,6 +396,23 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item has-treeview {{active_menu('sizes')['0']}}">
+            <a href="#" class="nav-link {{active_menu('sizes')['1']}}">
+              <i class="nav-icon fas fa-info-circle"></i>
+              <p>
+                {{trans('admin.sizes')}}
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{aurl('sizes')}}" class="nav-link {{active_menu('sizes')['1']}}">
+                  <i class="fas fa-info-circle nav-icon"></i>
+                  <p>{{trans('admin.sizes')}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

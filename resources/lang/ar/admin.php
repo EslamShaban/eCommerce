@@ -100,10 +100,17 @@ return [
     'mallname_en'                   => ' اسم المول انجليزى',
     'contact_name_mall'             => 'مسؤل المول',
     'mall_logo'                     => 'شعار المول',
-    'create_new_mall'               => 'إضافة لون جديد',
+    'create_new_mall'               => 'إضافة مول ',
+    'create_new_color'              => 'إضافة لون ',
     'colors'                        => 'الالوان',
     'color'                         => 'اللون',
     'colorname_ar'                  => 'اسم اللون عربى',
     'colorname_en'                  => 'إسم اللون انجليزى',
+    'sizename_ar'                   => 'إسم المقاس عربى',
+    'sizename_en'                   => 'إسم المقاس انجليزى',
+    'department_id'                 => 'القسم',
+    'is_public'                     => 'مقاس عام',
+    'sizes'                         => 'المقاسات',
+    'create_new_size'               => 'إضافة مقاس '
 
 ];

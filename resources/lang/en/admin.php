@@ -106,5 +106,12 @@ return [
     'colors'                        => 'Colors',
     'colorname_ar'                  => 'Arabic Color Name',
     'colorname_en'                  => 'English Color Name',
+    'sizename_ar'                   => 'Arabic Size Name',
+    'sizename_en'                   => 'English Size Name',
+    'department_id'                 => 'Department',
+    'is_public'                     => 'Public Size',
+    'sizes'                         => 'Sizes',
+    'create_new_size'               => 'Create New Size'
+
 
  ];
