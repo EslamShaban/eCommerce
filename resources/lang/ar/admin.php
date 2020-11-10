@@ -94,5 +94,16 @@ return [
     'shippingname_en'               => 'اسم شركة الشحن انجليزى',
     'user_id'                       => 'المالك',
     'shipping_logo'                 => 'شعار الشركة',
-    'shippings'                     => 'شركات الشحن'
+    'shippings'                     => 'شركات الشحن',
+    'malls'                         => 'المجمعات التجارية',
+    'mallname_ar'                   => ' اسم المول عربى',
+    'mallname_en'                   => ' اسم المول انجليزى',
+    'contact_name_mall'             => 'مسؤل المول',
+    'mall_logo'                     => 'شعار المول',
+    'create_new_mall'               => 'إضافة لون جديد',
+    'colors'                        => 'الالوان',
+    'color'                         => 'اللون',
+    'colorname_ar'                  => 'اسم اللون عربى',
+    'colorname_en'                  => 'إسم اللون انجليزى',
+
 ];

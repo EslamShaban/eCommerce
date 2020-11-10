@@ -174,7 +174,14 @@ return [
         'shippingname_ar'               => 'اسم شركة الشحن عربى',
         'shippingname_en'               => 'اسم شركة الشحن انجليزى',
         'user_id'                       => 'المالك',
-        'shipping_logo'                 => 'شعار الشركة'
+        'shipping_logo'                 => 'شعار الشركة',
+        'mallname_ar'                   => ' اسم المول عربى',
+        'mallname_en'                   => ' اسم المول انجليزى',
+        'contact_name_mall'             => 'مسؤل المول',
+        'mall_logo'                     => 'شعار المول',
+        'color'                         => 'اللون',
+        'colorname_ar'                  => 'اسم اللون عربى',
+        'colorname_en'                  => 'إسم اللون انجليزى',
     ],
 
 ];

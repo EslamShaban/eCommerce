@@ -42,6 +42,13 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function(){
         Route::resource('shippings', 'ShippingsController');
         Route::get('shippings/destroy/all', 'ShippingsController@multi_delete');
 
+        Route::resource('malls', 'MallsController');
+        Route::get('malls/destroy/all', 'MallsController@multi_delete');
+
+        
+        Route::resource('colors', 'ColorsController');
+        Route::get('colors/destroy/all', 'ColorsController@multi_delete');
+
 
         Route::get('settings', 'SettingsController@setting');
         Route::post('settings', 'SettingsController@setting_save');

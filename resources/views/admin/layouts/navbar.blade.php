@@ -362,6 +362,40 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item has-treeview {{active_menu('malls')['0']}}">
+            <a href="#" class="nav-link {{active_menu('malls')['1']}}">
+              <i class="nav-icon fas fa-building"></i>
+              <p>
+                {{trans('admin.malls')}}
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{aurl('malls')}}" class="nav-link {{active_menu('malls')['1']}}">
+                  <i class="fas fa-building nav-icon"></i>
+                  <p>{{trans('admin.malls')}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview {{active_menu('colors')['0']}}">
+            <a href="#" class="nav-link {{active_menu('colors')['1']}}">
+              <i class="nav-icon fas fa-paint-brush"></i>
+              <p>
+                {{trans('admin.colors')}}
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{aurl('colors')}}" class="nav-link {{active_menu('colors')['1']}}">
+                  <i class="fas fa-paint-brush nav-icon"></i>
+                  <p>{{trans('admin.colors')}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

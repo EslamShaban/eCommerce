@@ -94,6 +94,17 @@ return [
     'shippingname_en'               => 'English Shipping Name',
     'user_id'                       => 'Owner',
     'shipping_logo'                 => 'Shipping Logo',
-    'shippings'                     => 'Shippings'
+    'shippings'                     => 'Shippings',
+    'malls'                         => 'Malls',
+    'mallname_ar'                   => 'Arabic Mall Name',
+    'mallname_en'                   => 'English Mall Name',
+    'contact_name_mall'             => 'Contact Name',
+    'mall_logo'                     => 'Mall Logo',
+    'create_new_mall'               => 'Create New Mall',
+    'create_new_color'              => 'Create New Color',
+    'color'                         => 'Color',
+    'colors'                        => 'Colors',
+    'colorname_ar'                  => 'Arabic Color Name',
+    'colorname_en'                  => 'English Color Name',
 
  ];
