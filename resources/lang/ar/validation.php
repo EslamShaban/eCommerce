@@ -185,7 +185,11 @@ return [
         'sizename_ar'                   => 'إسم المقاس عربى',
         'sizename_en'                   => 'إسم المقاس انجليزى',
         'department_id'                 => 'القسم',
-        'is_public'                     => 'مقاس عام'
+        'is_public'                     => 'مقاس عام',
+        'weightname_ar'                 => 'الحجم عربى',
+        'weightname_en'                 => 'الحجم انجليزى',
+        'currency'                      => 'العملة'
+
     ],
 
 ];

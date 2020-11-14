@@ -16,6 +16,7 @@ class Country extends Model
         'countryname_en',
         'mob',
         'code',
+        'currency',
         'logo'
 
     ];

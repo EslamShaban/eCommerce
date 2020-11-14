@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Storage;
+use App\File;
 
 class Upload extends Controller
 {
@@ -37,7 +38,49 @@ class Upload extends Controller
           Storage::has($data['delete_file']) ? Storage::delete($data['delete_file']) : '';
 
             return request()->file($data['file'])->store($data['path']);
-        }
 
+        }else if(request()->hasFile($data['file']) && $data['upload_type'] == 'files'){
+
+  
+            $file = request()->file($data['file']);
+
+            
+
+            $size       = $file->getSize();
+            $mime_type  = $file->getMimeType();
+            $name       = $file->getClientOriginalName();
+            $hashname   = $file->hashName();
+
+            
+
+            $add = File::create([
+                'name'          => $name,
+                'size'          => $size ,
+                'file'          => $hashname,
+                'path'          => $data['path'],
+                'full_path'     => $data['path'] . '/' . $hashname,
+                'mime_type'     => $mime_type,
+                'file_type'     => $data['file_type'],
+                'relation_id'   => $data['relation_id']
+            ]);
+
+            $file->store($data['path']);
+
+            return $add->id;
+
+          }
+
+    }
+
+    public static function deleteFile($id)
+    {
+       $file = File::find($id);
+
+       if(! empty($file)){
+
+            Storage::delete($file->full_path);
+
+           $file->delete();
+       }
     }
 }

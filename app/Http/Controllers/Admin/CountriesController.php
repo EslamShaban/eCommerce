@@ -32,6 +32,7 @@ class CountriesController extends Controller
             'countryname_ar'        => 'required',
             'countryname_en'        => 'required',
             'mob'                   => 'required',
+            'currency'              => 'required',
             'code'                  => 'required',
             'logo'                  => 'required|image|mimes:jpg,png,jpeg,gif'
         ],[],['logo' => trans('admin.country_logo')]);
@@ -68,6 +69,7 @@ class CountriesController extends Controller
         $data = $request->validate([
             'countryname_ar'        => 'required',
             'countryname_en'        => 'required',
+            'currency'              => 'required',
             'mob'                   => 'required',
             'code'                  => 'required',
             'logo'                  => 'image|mimes:jpg,png,jpeg,gif'

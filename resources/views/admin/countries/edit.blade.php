@@ -34,6 +34,10 @@
                   <input type="text"  name="code" id="code" class="form-control" value="{{$country->code}}" placeholder="{{trans('admin.code')}}">
               </div>
               <div class="form-group mb-3">
+                <label for="currency">{{trans('admin.currency')}}</label>
+                <input type="text"  name="currency" id="currency" class="form-control" value="{{$country->currency}}" placeholder="{{trans('admin.currency')}}">
+              </div>
+              <div class="form-group mb-3">
                   <label for="logo" >{{trans('admin.country_logo')}}</label>
                   <input type="file"  name="logo" id="logo" class="form-control image">
                   @if(! empty($country->logo))

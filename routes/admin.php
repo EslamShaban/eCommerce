@@ -52,7 +52,20 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function(){
         Route::resource('sizes', 'SizesController');
         Route::get('sizes/destroy/all', 'SizesController@multi_delete');
 
+        Route::resource('weights', 'WeightsController');
+        Route::get('weights/destroy/all', 'WeightsController@multi_delete');
 
+        Route::resource('products', 'ProductsController');
+        Route::get('products/destroy/all', 'ProductsController@multi_delete');
+
+
+        Route::post('upload/image/{pid}', 'ProductsController@upload_file');
+
+        Route::post('delete/image', 'ProductsController@delete_file');
+
+        Route::post('update/image/{pid}', 'ProductsController@update_product_image');
+
+        Route::post('delete/product/image/{pid}', 'ProductsController@delete_product_image');
 
         Route::get('settings', 'SettingsController@setting');
         Route::post('settings', 'SettingsController@setting_save');

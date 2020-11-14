@@ -187,7 +187,13 @@ return [
         'sizename_ar'                   => 'Arabic Size Name',
         'sizename_en'                   => 'English Size Name',
         'department_id'                 => 'Department',
-        'is_public'                     => 'Public Size'
+        'is_public'                     => 'Public Size',
+        'weights'                       => 'Weights',
+        'create_new_weight'             => 'Create New Weight',
+        'weightname_ar'                 => 'Arabic Weight Name',
+        'weightname_en'                 => 'English Weight Name',
+        'currency'                      => 'Currency'
+
     ],
 
 ];

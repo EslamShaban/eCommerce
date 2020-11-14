@@ -111,7 +111,11 @@ return [
     'department_id'                 => 'Department',
     'is_public'                     => 'Public Size',
     'sizes'                         => 'Sizes',
-    'create_new_size'               => 'Create New Size'
-
+    'create_new_size'               => 'Create New Size',
+    'weights'                       => 'Weights',
+    'create_new_weight'             => 'Create New Weight',
+    'weightname_ar'                 => 'Arabic Weight Name',
+    'weightname_en'                 => 'English Weight Name',
+    'currency'                      => 'Currency'
 
  ];

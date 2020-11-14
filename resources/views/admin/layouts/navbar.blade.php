@@ -413,6 +413,40 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item has-treeview {{active_menu('weights')['0']}}">
+            <a href="#" class="nav-link {{active_menu('weights')['1']}}">
+              <i class="nav-icon fas fa-info-circle"></i>
+              <p>
+                {{trans('admin.weights')}}
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{aurl('weights')}}" class="nav-link {{active_menu('weights')['1']}}">
+                  <i class="fas fa-info-circle nav-icon"></i>
+                  <p>{{trans('admin.weights')}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview {{active_menu('products')['0']}}">
+            <a href="#" class="nav-link {{active_menu('products')['1']}}">
+              <i class="nav-icon fas fa-tags"></i>
+              <p>
+                {{trans('admin.products')}}
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{aurl('products')}}" class="nav-link {{active_menu('products')['1']}}">
+                  <i class="fas fa-tags nav-icon"></i>
+                  <p>{{trans('admin.products')}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

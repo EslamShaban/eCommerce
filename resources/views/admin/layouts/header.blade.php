@@ -23,7 +23,7 @@
       <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css">
       <link rel="stylesheet" href="{{url('/')}}/design/adminlte/dist/css/rtl/custom.css">
       <link rel="stylesheet" href="{{url('/')}}/design/adminlte/jstree/themes/default/style.css">
-      
+    
     @endif
 
     <!-- overlayScrollbars -->
@@ -38,7 +38,8 @@
     <!-- DataTables -->
     <link rel="stylesheet" href="{{url('/')}}/design/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
     <link rel="icon" href="{{Storage::url(setting()->icon)}}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css
+    ">
 
   </head>
   <body class="hold-transition sidebar-mini layout-fixed">
