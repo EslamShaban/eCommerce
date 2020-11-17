@@ -34,14 +34,13 @@ class CreateProductsTable extends Migration
             $table->bigInteger('color_id')->unsigned()->nullable();
             $table->foreign('color_id')->references('id')->on('colors')->onDelete('cascade')->onUpdate('cascade');
             
+            $table->string('size')->nullable();
             $table->bigInteger('size_id')->unsigned()->nullable();
             $table->foreign('size_id')->references('id')->on('sizes')->onDelete('cascade')->onUpdate('cascade');
             
             $table->bigInteger('currency_id')->unsigned()->nullable();
             $table->foreign('currency_id')->references('id')->on('countries')->onUpdate('cascade');
-            
-            $table->longtext('other_data')->nullable();
-            
+                        
             $table->decimal('price',5 ,2)->default(0);
             $table->integer('stock')->default(0);
 

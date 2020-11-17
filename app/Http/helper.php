@@ -6,6 +6,29 @@ if(! function_exists('setting')){
     }
 }
 
+if(! function_exists('get_parent')){
+    
+    
+    function get_parent($dep_id){
+        $list_dep = [];
+
+        $departement =  \App\Departement::find($dep_id);
+        if($departement->parent !== null && $departement->parent > 0){
+            return get_parent($departement->parent) . "," . $dep_id;
+        }else{
+            return $dep_id;
+        }
+
+    }
+}           
+             
+if(! function_exists('check_mall')){
+    
+    function check_mall($mall_id, $product_id){
+        return App\Mall_Product::where('product_id', $product_id)->where('mall_id', $mall_id)->count() > 0 ? true : false;
+    }
+}
+
 if(! function_exists('load_dep')){
     function load_dep($select = null, $dep_hide = null){
         $departements =  \App\Departement::selectRaw('depname_'.session('lang').' as text' )

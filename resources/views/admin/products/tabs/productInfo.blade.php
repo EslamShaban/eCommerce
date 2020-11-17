@@ -7,6 +7,6 @@
     </div>
     <div class="form-group mb-3">
         <label for="content"> {{trans('admin.content')}} </label>
-        <textarea rows='5' name="content" id="content" class="form-control" value="{{$Product->content}}" placeholder="{{trans('admin.content')}}"></textarea>
+        <textarea rows='5' name="content" id="content" class="form-control" placeholder="{{trans('admin.content')}}">{{$Product->content}}</textarea>
     </div>
 </div>

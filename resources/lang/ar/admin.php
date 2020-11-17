@@ -133,7 +133,7 @@ return [
     'department'                    => 'القسم',
     'product_setting'               => 'إعدادات المنتج',
     'product_media'                 => 'وسائط المنتج',
-    'product_size_weight'           => 'الوزن و الحجم',
+    'product_size_weight'           => 'معلومات الشحن',
     'other_data'                    => 'معلومات إضافية',
     'create_new_product'            => 'إضافة منتج',
     'create_or_edit_product'        => 'إضافة او تعديل :title',

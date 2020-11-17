@@ -5,6 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
+use App\OtherData;
+use App\Mall_Product;
+use App\Size;
+use App\Weight;
+use App\Color;
+use App\Trademark;
+use App\Manufactory;
+use App\File;
 use Storage;
 use Up;
 
@@ -69,6 +77,33 @@ class ProductsController extends Controller
 
     }
 
+    public function size_weight()
+    {
+        if(request()->ajax() && request()->has('dep_id')){
+
+            $size_name      = 'sizename_'.session('lang');
+            $weight_name    = 'weightname_'.session('lang');
+            $color_name     = 'colorname_'.session('lang');
+            $trademark_name = 'tradmarkname_'.session('lang');
+            $manufact_name  = 'manufactoryname_'.session('lang');
+
+            $dep_list = array_diff(explode(',', get_parent(request('dep_id'))), [request('dep_id')]);
+
+            $sizes   = Size::where('is_public', 'yes')->whereIn('department_id', $dep_list)->orwhere('department_id', request('dep_id'))->pluck($size_name, 'id');
+
+            $weights            = Weight::pluck($weight_name, 'id');
+            $colors             = Color::pluck($color_name, 'id');
+            $trademarks         = Trademark::pluck($trademark_name, 'id');
+            $manufactories      = Manufactory::pluck($manufact_name, 'id');
+
+            $Product = Product::where('id', request('product_id'))->first();
+            
+            return view('admin.products.ajax.shipping_info', compact('sizes', 'weights', 'colors', 'trademarks', 'manufactories', 'Product'))->render();
+
+        }else{
+            return trans('admin.choose_department');
+        }
+    }
     public function update_product_image($id)
     {
         
@@ -123,45 +158,142 @@ class ProductsController extends Controller
        }
     }
 
+    public function copy_product($product_id)
+    {
+        $product = Product::find($product_id);
+        $copy = Product::find($product_id)->toArray();
 
+        unset($copy['id']);
+        
+        $createCopyProduct = Product::create($copy);
+
+        if(!empty($copy['photo'])){
+
+            $ext = \File::extension($copy['photo']);
+            $new_path= 'products/' . $createCopyProduct->id . '/' . \Str::random(30) . '.' . $ext;
+            Storage::copy($copy['photo'], $new_path);
+            $createCopyProduct->photo = $new_path;
+            $createCopyProduct->save();
+               
+        }
+
+        $files = File::where('file_type', 'product')->where('relation_id', $product_id)->get();
+
+        if(!empty($files)){
+            foreach($files as $file){
+                $hashname = \Str::random(30);
+                $ext = \File::extension($file->full_path);
+                $new_file_path ='products/' . $createCopyProduct->id . '/' . $hashname . '.' . $ext;
+                Storage::copy($file->full_path, $new_file_path);
+                $add = File::create([
+                    'name'          => $file->name,
+                    'size'          => $file->size ,
+                    'file'          => $hashname.'.'.$ext,
+                    'path'          => 'products/' . $createCopyProduct->id,
+                    'full_path'     => $new_file_path,
+                    'mime_type'     => $file->mime_type,
+                    'file_type'     => 'product',
+                    'relation_id'   => $createCopyProduct->id
+                ]);
+            }
+        }
+
+        foreach($product->malls()->get() as $mall){
+            Mall_Product::create([
+                'product_id'    => $createCopyProduct->id,
+                'mall_id'       => $mall->mall_id,
+            ]);
+        }
+
+        
+        foreach($product->other_data()->get() as $other_data){
+            OtherData::create([
+                'product_id'    => $createCopyProduct->id,
+                'data_key'      => $other_data->data_key,
+                'data_value'    => $other_data->data_value
+            ]);
+    }
+
+        return response(['status' => true, 'success' => trans('admin.copied_successfuly'), 'id' => $createCopyProduct->id], 200);
+        
+    }
 
     public function update(Request $request, $id)
     {
         $data = $request->validate([
-            'Productname_ar'        => 'required',
-            'Productname_en'        => 'required',
-            'currency'              => 'required',
-            'mob'                   => 'required',
-            'code'                  => 'required',
-            'logo'                  => 'image|mimes:jpg,png,jpeg,gif'
-        ],[],['logo' => trans('admin.Product_logo')]);
+            'title'                 => 'required',
+            'content'               => 'required',
+            'department_id'         => 'required|numeric',
+            'trademark_id'          => 'required|numeric',
+            'manufact_id'           => 'required|numeric',
+            'color_id'              => 'sometimes|nullable|numeric',
+            'size'                  => 'sometimes|nullable',
+            'size_id'               => 'sometimes|nullable|numeric',
+            'currency_id'           => 'sometimes|nullable|numeric',
+            'price'                 => 'required|numeric',
+            'stock'                 => 'required|numeric',
+            'start_at'              => 'required|date',
+            'end_at'                => 'required|date',
+            'start_offer_at'        => 'sometimes|nullable|date',
+            'end_offer_at'          => 'sometimes|nullable|date',
+            'price_offer'           => 'sometimes|nullable|numeric',
+            'weight'                => 'sometimes|nullable',
+            'weight_id'             => 'sometimes|nullable|numeric',
+            'status'                => 'sometimes|nullable|in:pending,active,refused',
+            'reason'                => 'sometimes|nullable',
 
-        if(request()->hasFile('logo')){
+        ]);
 
-            $data['logo'] = Up::uploadFile([
-                'new_name'      => '',
-                'file'          => 'logo',
-                'path'          => 'products',
-                'upload_type'   => 'single',
-                'delete_file'   => Product::find($id)->logo
-            ]);
+        if(request()->has('mall')){
+
+            
+            Mall_Product::where('product_id', $id)->delete();
+
+  
+            foreach(request('mall') as $mall){
+                Mall_Product::create([
+                    'product_id'    => $id,
+                    'mall_id'       => $mall,
+                ]);
+
+            }
+
         }
 
+        if(request()->has('key') && request()->has('value')){
+
+            
+            OtherData::where('product_id', $id)->delete();
+
+            $i=0;
+  
+            foreach(request('key') as $key){
+                OtherData::create([
+                    'product_id'    => $id,
+                    'data_key'      => $key,
+                    'data_value'    => request('value')[$i]
+                ]);
+
+                $i++;
+            }
+
+        }
 
         Product::where('id', $id)->update($data);
 
-        session()->flash('success', trans('admin.edit_successfuly'));
-
-        return redirect(aurl('products'));
+        return response(['status' => true, 'success' => trans('admin.edit_successfuly')], 200);
     }
 
- 
-    public function destroy($id)
+    public function deleteProduct($id)
     {
         $Product = Product::find($id);
-        Storage::delete($Product->logo);
-
+        Storage::delete($Product->photo);
+        Up::deleteProduct_files($Product->id);
         $Product->delete();
+    }
+    public function destroy($id)
+    {
+        $this->deleteProduct($id);
 
         session()->flash('success', trans('admin.deleted_successfuly'));
 
@@ -175,22 +307,15 @@ class ProductsController extends Controller
 
             foreach(request('item') as $id){
 
-                $Product = Product::find($id);
-                Storage::delete($Product->logo);
-        
-                $Product->delete();
+                $this->deleteProduct($id);
             }
 
         }else{
 
-            $Product = Product::find(request('item'));
-            Storage::delete($Product->logo);
-    
-            $Product->delete();
+            $this->deleteProduct(request('item'));;
 
         }
-        
-        
+             
         session()->flash('success', trans('admin.deleted_successfuly'));
 
         return redirect(aurl('products'));

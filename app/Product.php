@@ -18,9 +18,9 @@ class Product extends Model
         'trademark_id',
         'manufact_id',
         'color_id',
+        'size',
         'size_id',
         'currency_id',
-        'other_data',
         'price',
         'stock',
         'start_at',
@@ -38,4 +38,15 @@ class Product extends Model
     {
        return $this->hasMany('App\File', 'relation_id', 'id')->where('file_type', 'product');
     }
+
+    public function other_data()
+    {
+       return $this->hasMany('App\OtherData', 'product_id', 'id');
+    }
+
+    public function malls()
+    {
+       return $this->hasMany('App\Mall_Product', 'product_id', 'id');
+    }
+
 }

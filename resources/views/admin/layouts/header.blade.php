@@ -21,9 +21,7 @@
     @else 
       <link rel="stylesheet" href="{{url('/')}}/design/adminlte/dist/css/rtl/adminlte.min.css">
       <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css">
-      <link rel="stylesheet" href="{{url('/')}}/design/adminlte/dist/css/rtl/custom.css">
-      <link rel="stylesheet" href="{{url('/')}}/design/adminlte/jstree/themes/default/style.css">
-    
+      <link rel="stylesheet" href="{{url('/')}}/design/adminlte/dist/css/rtl/custom.css">    
     @endif
 
     <!-- overlayScrollbars -->
@@ -38,8 +36,10 @@
     <!-- DataTables -->
     <link rel="stylesheet" href="{{url('/')}}/design/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
     <link rel="icon" href="{{Storage::url(setting()->icon)}}">
+    <link rel="stylesheet" href="{{url('/')}}/design/adminlte/jstree/themes/default/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css
     ">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 
   </head>
   <body class="hold-transition sidebar-mini layout-fixed">

@@ -7,18 +7,18 @@
     
 <div class="card">
     <div class="card-header">
-      <h3 class="card-title">{{trans('admin.countries')}}</h3>
+      <h3 class="card-title">{{trans('admin.products')}}</h3>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-      <a href="{{route('countries.create')}}" class="btn btn-info"><i class="fa fa-plus"></i> <span>{{trans('admin.create_new_country')}}</span></a>
+      <a href="{{route('products.create')}}" class="btn btn-info"><i class="fa fa-plus"></i> <span>{{trans('admin.create_new_product')}}</span></a>
       <a href="#" class="btn btn-primary"><i class="fa fa-print"></i> <span>{{trans('admin.print')}}</span></a>
       <a href="#" class="btn btn-success"><i class="fa fa-file"></i> <span>{{trans('admin.export_excel')}}</span></a>
       <a href="#" class="btn btn-danger delete_btn disabled" onclick="del_all()"><i class="fa fa-trash"></i> <span>{{trans('admin.delete_all')}}</span></a>
 
       <br><br>
       
-      <form action="{{aurl('countries/destroy/all')}}" id="form_data" >
+      <form action="{{aurl('products/destroy/all')}}" id="form_data" >
 
         @csrf
 
@@ -29,8 +29,7 @@
           <tr>
             <th><input type="checkbox"  class="checkall" onclick="check_all()" /></th>
             <th>#</th>
-            <th>{{trans('admin.countryname_ar')}}</th>
-            <th>{{trans('admin.countryname_en')}}</th>
+            <th>{{trans('admin.title')}}</th>
             <th>{{trans('admin.created_at')}}</th>
             <th>{{trans('admin.updated_at')}}</th>
             <th>{{trans('admin.action')}}</th>
@@ -40,20 +39,19 @@
               @php
                   $i=0; 
               @endphp
-              @foreach($countries as $country)
+              @foreach($products as $product)
                   @php
                     $i++;
                   @endphp
                   <tr style="height:10px">
-                    <td><input type="checkbox" class="item_checkbox" name="item[]" onclick="item_check('{{$countries->count()}}')" value="{{$country->id}}" /></td>
+                    <td><input type="checkbox" class="item_checkbox" name="item[]" onclick="item_check('{{$products->count()}}')" value="{{$product->id}}" /></td>
                     <td>{{$i}}</td>
-                    <td>{{$country->countryname_ar}}</td>
-                    <td>{{$country->countryname_en}}</td>
-                    <td>{{$country->created_at}}</td>
-                    <td>{{$country->updated_at}}</td>
+                    <td>{{$product->title}}</td>
+                    <td>{{$product->created_at}}</td>
+                    <td>{{$product->updated_at}}</td>
                     <td>
-                      <a href="{{route('countries.edit', $country->id)}}" class="btn btn-info"><i class="fa fa-edit"></i> </a>
-                      <a href="#" class="btn btn-danger" onclick="delete_this_item('{{$country->id}}')"><i class="fa fa-trash"></i> </a>
+                      <a href="{{route('products.edit', $product->id)}}" class="btn btn-info"><i class="fa fa-edit"></i> </a>
+                      <a href="#" class="btn btn-danger" onclick="delete_this_item('{{$product->id}}')"><i class="fa fa-trash"></i> </a>
                     </td>
                   </tr>
               @endforeach

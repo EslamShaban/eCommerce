@@ -56,6 +56,7 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function(){
         Route::get('weights/destroy/all', 'WeightsController@multi_delete');
 
         Route::resource('products', 'ProductsController');
+        Route::post('products/copy/{product_id}', 'ProductsController@copy_product');
         Route::get('products/destroy/all', 'ProductsController@multi_delete');
 
 
@@ -64,8 +65,10 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function(){
         Route::post('delete/image', 'ProductsController@delete_file');
 
         Route::post('update/image/{pid}', 'ProductsController@update_product_image');
-
+        
         Route::post('delete/product/image/{pid}', 'ProductsController@delete_product_image');
+        
+        Route::post('load/weight/size', 'ProductsController@size_weight');
 
         Route::get('settings', 'SettingsController@setting');
         Route::post('settings', 'SettingsController@setting_save');

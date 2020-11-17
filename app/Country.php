@@ -20,4 +20,9 @@ class Country extends Model
         'logo'
 
     ];
+
+    public function malls(Type $var = null)
+    {
+        return $this->hasMany('App\Mall', 'country_id','id');
+    }
 }
