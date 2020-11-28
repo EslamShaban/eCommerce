@@ -49,4 +49,9 @@ class Product extends Model
        return $this->hasMany('App\Mall_Product', 'product_id', 'id');
     }
 
+    public function related()
+    {
+       return $this->hasMany('App\RelatedProduct', 'product_id', 'id');
+    }
+
 }

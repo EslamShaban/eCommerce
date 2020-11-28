@@ -155,6 +155,9 @@
               <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#other_data">{{trans('admin.other_data')}} <i class="fa fa-database"></i></a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#related_product">{{trans('admin.related_product')}} <i class="fa fa-list"></i></a>
+              </li>
             </ul>
           
             <div class="tab-content">
@@ -165,7 +168,8 @@
               @include('admin.products.tabs.productMedia')
               @include('admin.products.tabs.productSizeandWeight')
               @include('admin.products.tabs.productOtherdata')
-             
+              @include('admin.products.tabs.related_product')
+
 
             </div>
 

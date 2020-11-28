@@ -57,8 +57,9 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function(){
 
         Route::resource('products', 'ProductsController');
         Route::post('products/copy/{product_id}', 'ProductsController@copy_product');
+        Route::post('products/search', 'ProductsController@products_search');
         Route::get('products/destroy/all', 'ProductsController@multi_delete');
-
+        
 
         Route::post('upload/image/{pid}', 'ProductsController@upload_file');
 

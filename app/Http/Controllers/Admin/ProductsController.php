@@ -13,6 +13,7 @@ use App\Color;
 use App\Trademark;
 use App\Manufactory;
 use App\File;
+use App\RelatedProduct;
 use Storage;
 use Up;
 
@@ -260,6 +261,7 @@ class ProductsController extends Controller
 
         }
 
+
         if(request()->has('key') && request()->has('value')){
 
             
@@ -278,12 +280,50 @@ class ProductsController extends Controller
             }
 
         }
+                
+        if(request()->has('related')){
+
+            
+            RelatedProduct::where('product_id', $id)->delete();
+
+  
+            foreach(request('related') as $related){
+                RelatedProduct::create([
+                    'product_id'            => $id,
+                    'related_product'       => $related,
+                ]);
+
+            }
+
+        }
 
         Product::where('id', $id)->update($data);
 
         return response(['status' => true, 'success' => trans('admin.edit_successfuly')], 200);
     }
 
+    public function products_search()
+    {
+        if(request()->ajax()){
+
+            if(!empty(request('search')) && request()->has('search')){
+
+                $related_product = RelatedProduct::where('product_id', request('id'))->get(['related_product']);
+                $products = Product::where('title', 'LIKE', '%'.request('search').'%')
+                ->where('id', '!=', request('id'))
+                ->whereNotIn('id', $related_product)
+                ->limit(10)->get();
+
+                return response([
+                    'status'=>true, 
+                    'result'=>count($products) > 0 ? $products : '',
+                    'count'=>count($products)
+                ],200);
+
+            }
+
+        }
+    }
     public function deleteProduct($id)
     {
         $Product = Product::find($id);
